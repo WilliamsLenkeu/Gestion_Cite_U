@@ -1,27 +1,38 @@
 package com.example.gestioncite_universitaire;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private Button etatDesChambresButton;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void initialize() {
+        // Vous pouvez initialiser des éléments ici si nécessaire.
     }
 
     @FXML
-    private ToggleButton toggleButton;
+    private void handleEtatDesChambresButtonClick() {
+        try {
+            // Charger la vue listeChambre.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("listeChambre.fxml"));
+            Parent root = loader.load();
 
-    @FXML
-    private void onToggleThemeButtonClick() {
-        if (toggleButton.isSelected()) {
-            welcomeText.setStyle("-fx-text-fill: white; -fx-background-color: darkgray;");
-        } else {
-            welcomeText.setStyle("-fx-text-fill: black; -fx-background-color: lightgray;");
+            // Créer une nouvelle scène
+            Scene scene = new Scene(root);
+
+            // Obtenir la scène actuelle du bouton et la remplacer par la nouvelle scène
+            Stage stage = (Stage) etatDesChambresButton.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

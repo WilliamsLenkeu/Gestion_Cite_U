@@ -5,7 +5,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -103,7 +102,7 @@
                         <Insets top="10.0" />
                      </padding>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="186.0" prefWidth="169.0" style="-fx-background-color: d8f2fa; -fx-background-radius: 15;" text="Etat Des Chambres" />
+                        <Button fx:id="etatDesChambresButton" mnemonicParsing="false" prefHeight="186.0" prefWidth="169.0" style="-fx-background-color: d8f2fa; -fx-background-radius: 15;" text="Etat Des Chambres" onAction="#handleEtatDesChambresButtonClick" />
                         <Button mnemonicParsing="false" prefHeight="190.0" prefWidth="171.0" style="-fx-background-color: eeeeff; -fx-background-radius: 15;" text="Chiffres D'Affaires" />
                         <Button mnemonicParsing="false" prefHeight="202.0" prefWidth="173.0" style="-fx-background-color: d0ded9; -fx-background-radius: 15;" text="Etat Des Residents" />
                      </children>
