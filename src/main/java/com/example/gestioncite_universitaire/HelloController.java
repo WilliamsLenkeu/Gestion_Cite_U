@@ -35,4 +35,21 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void handleHomeClick() {
+        try {
+            // Charger la vue hello-view.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+            Parent root = loader.load();
+
+            // Créer une nouvelle scène
+            Scene scene = new Scene(root);
+
+            // Obtenir la scène actuelle du bouton et la remplacer par la nouvelle scène
+            Stage stage = (Stage) etatDesChambresButton.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
